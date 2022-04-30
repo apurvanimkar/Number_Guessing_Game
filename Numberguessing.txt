@@ -1,0 +1,42 @@
+import java.util.*;
+public class NumberGuesses1
+{
+    public static void main(String args[])
+    {
+        Scanner s1=new Scanner(System.in);
+        int userguess=0;
+        int chances=5;
+        int num=(int)(Math.random()*100+1);
+        System.out.println("You have 5 chances for to Win the Game");
+
+        while(chances>0)
+        {
+            System.out.println("Enter any number from 1 to 100");
+            userguess=s1.nextInt();
+            
+            
+            if(userguess==num)
+            {
+              System.out.println("Congratulation!!you guess the correct number "+num); 
+              break;
+            }
+            else if(userguess>num)
+            {
+                System.out.println("you are too high,guess lowest");
+            }
+            else
+            {
+                System.out.println("you are too low,guess higher");
+            }
+            //userguess--;
+            chances--;
+            
+            
+            
+        }
+        if(chances==0 && userguess!=num)
+            {
+                System.out.println("you ran out o guesses ,the  Number was --->"+num);
+            }
+    }
+    }
